@@ -29,6 +29,8 @@
 
   <h2>New Book</h2>
 
+   <%= render 'layouts/error_messages', book: @book %>
+
 <%= form_with model:@book, local:true do |f| %>
 
     <div class="field">
