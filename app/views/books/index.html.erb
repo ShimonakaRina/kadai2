@@ -29,7 +29,12 @@
 
   <h2>New Book</h2>
 
-   <%= render 'layouts/error_messages', book: @book %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
 
 <%= form_with model:@book, local:true do |f| %>
 
